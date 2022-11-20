@@ -6,7 +6,8 @@ main_ingredients = {
     "coffee": 240,
     "milk": 240,
     "water": 240,
-    "tea": 240
+    "tea": 240,
+    "cream": 120
 }
 
 sweeteners = {
