@@ -10,16 +10,23 @@ main_ingredients = {
     "cream": 120
 }
 
-sweeteners = {
-    "sugar": 100,
-    "s_free": 100,
-    "honey": 100
-}
+sweeteners = [
+    {
+        "sugar": 100,
+        "s_free": 100,
+        "honey": 100
+    },
+    10
+]
 
-snacks = {
-    "cookie": 100,
-    "toast": 100,
-    "biscuit": 100,
-    "patties": 100,
-    "cakes": 100
-}
+snacks = [
+    {
+        "cookie": 100,
+        "toast": 100,
+        "biscuit": 100,
+        "patties": 100,
+        "cakes": 100
+    },
+    20
+]
+
