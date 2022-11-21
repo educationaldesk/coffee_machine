@@ -4,27 +4,42 @@
 
 MENU = {
     "latte": {
-        "water": 15,
-        "coffee": 20,
-        "milk": 20
+        "ingredients": {
+            "water": 15,
+            "coffee": 20,
+            "milk": 20
+        },
+        "cost": 50
     },
     "cappuccino": {
-        "milk": 20,
-        "coffee": 20,
-        "cream": 15,
+        "ingredients": {
+            "milk": 20,
+            "coffee": 20,
+            "cream": 15,
+        },
+        "cost": 140
     },
     "espresso": {
-        "water": 15,
-        "milk": 25,
-        "coffee": 20
+        "ingredients": {
+            "water": 15,
+            "milk": 25,
+            "coffee": 20
+        },
+        "cost": 80
     },
     "blackCoffee": {
-        "coffee": 30,
-        "water": 15
+        "ingredients": {
+            "coffee": 30,
+            "water": 15
+        },
+        "cost": 65
     },
     "tea": {
-        "milk": 15,
-        "tea": 10,
-        "water": 10
+        "ingredients": {
+            "milk": 15,
+            "tea": 10,
+            "water": 10
+        },
+        "cost": 86
     }
 }
