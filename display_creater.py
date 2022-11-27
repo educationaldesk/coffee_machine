@@ -6,15 +6,15 @@ from resources import main_ingredients, snacks, sweeteners
 from menu import MENU
 
 
-# def closed_drinks():
-#     """this function counts the closed drinks in the menu."""
-#     closed_drink_count = 0
-#     for drink in MENU:
-#         for ingredient in MENU[drink]:
-#             if main_ingredients[ingredient] < MENU[drink][ingredient]:
-#                 closed_drink_count += 1
-#                 break
-#     return closed_drink_count
+def closed_drinks():
+    """this function counts the closed drinks in the menu."""
+    closed_drink_count = 0
+    for drink in MENU:
+        for ingredient in MENU[drink]:
+            if main_ingredients[ingredient] < MENU[drink][ingredient]:
+                closed_drink_count += 1
+                break
+    return closed_drink_count
 
 
 def drink_display():
