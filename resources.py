@@ -10,23 +10,20 @@ main_ingredients = {
     "cream": 120
 }
 
-sweeteners = [
-    {
+# sweeteners' dictionary & price
+sweeteners = {
         "sugar": 100,
         "s_free": 100,
         "honey": 100
-    },
-    10
-]
+    }
+sweet_price = 10
 
-snacks = [
-    {
+# snacks' dictionary & price
+snacks = {
         "cookie": 100,
         "toast": 100,
         "biscuit": 100,
         "patties": 100,
         "cakes": 100
-    },
-    20
-]
-
+    }
+snack_price = 20
