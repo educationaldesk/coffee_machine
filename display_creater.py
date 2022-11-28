@@ -10,8 +10,9 @@ def closed_drinks():
     """this function counts the closed drinks in the menu."""
     closed_drink_count = 0
     for drink in MENU:
-        for ingredient in MENU[drink]:
-            if main_ingredients[ingredient] < MENU[drink][ingredient]:
+        drink_ingredients = MENU[drink]["ingredients"]
+        for ingredient in drink_ingredients:
+            if main_ingredients[ingredient] < drink_ingredients[ingredient]:
                 closed_drink_count += 1
                 break
     return closed_drink_count
