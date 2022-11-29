@@ -35,3 +35,14 @@ def drink_display():
         display[str(drink_num)] = [drink_name, drink_price]
         drink_num += 1
     return display
+
+
+def addon_display(item_list):
+    """this function creates the display for addons"""
+    display = {}
+    serial = 1
+    for item in item_list:
+        if item_list[item] >= 5:
+            display[serial] = [item, item_list[item]]
+        serial += 1
+    return display
