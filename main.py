@@ -4,6 +4,7 @@
 
 from display_creater import closed_drinks, drink_display
 from resources import main_ingredients
+from command import drink_commands
 from menu import MENU
 
 
@@ -25,5 +26,6 @@ else:
         for i in display:
             print(f"{i}. {display[i][0]} @ rs. {display[i][1]}")
 
-        if input("enter x to close : ") == 'x':
+        order = drink_commands(avail_drinks_list)  # takes order from customer and employees
+        if order == 'x':
             run_machine = False
