@@ -43,6 +43,6 @@ def addon_display(item_list):
     serial = 1
     for item in item_list:
         if item_list[item] >= 5:
-            display[serial] = [item, item_list[item]]
+            display[str(serial)] = [item, item_list[item]]
         serial += 1
     return display
