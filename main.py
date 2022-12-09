@@ -20,7 +20,10 @@ else:
         display = drink_display()  # display is a dictionary hold drink names and cost and serial number.
         avail_drinks = {num: [display[num][0], display[num][1]] for num in display if display[num][0] in MENU}
         drinks_serial_no = [num for num in avail_drinks]  # creates the drinks number.
-        total_order_price = 0  # gathers the total price of drinks.
+
+        # customer order details.
+        customer_order = {}
+        total_order_price = 0
 
         # menu and display code starts here.
         print("WELCOME\nSELECT A DRINK.\nMENU. we have >>\n")
@@ -28,32 +31,38 @@ else:
             print(f"{i}. {display[i][0]} @ ₹{display[i][1]}")
 
         order = user_commands(drinks_serial_no)  # takes order from customer and employees
-        if order == 'x':
+        if order == 'x':  # this turns off the machine
             run_machine = False
-        elif order == "report":
+        elif order == "report":  # shows all the resources
             pass
-        elif order in avail_drinks:
+        elif order in avail_drinks:  # for drink that is available
             print(f"you ordered {order}. {avail_drinks[order][0]} @ ₹{avail_drinks[order][1]}\n")
+            customer_order[order] = avail_drinks[order][0]
             total_order_price += avail_drinks[order][1]  # adding price in total.
 
             # sweetener variables.
-            sweetener_display = addon_display(sweeteners)
+            sweetener_display = addon_display(sweeteners)  # created sweetener dictionary
             sweetener_list = [num for num in sweetener_display]
-            for item in sweetener_display:
-                print(f"{item}. {sweetener_display[item][0]} @ ₹{sweetener_display[item][1]}")
+            for item in sweetener_display:  # list all the sweeteners
+                print(f"{item}. {sweetener_display[item]} @ ₹{sweet_price}")
             sweetener_order = user_commands(sweetener_list)  # taking sweetener order.
 
-            if sweetener_order in sweetener_display:
-                print(f"You ordered {sweetener_order} @ ₹{sweetener_display[sweetener_order][1]}")
-                total_order_price += sweetener_display[sweetener_order][1]
+            if sweetener_order in sweetener_display:  # checking sweetener in list.
+                print(f"You ordered {sweetener_order} @ ₹{sweet_price}\n")
+                # customer_order =
+                total_order_price += sweet_price
 
             # snacks variables starts here.
             snack_display = addon_display(snacks)
             snack_list = [num for num in snack_display]
             for item in snack_display:
-                print(f"{item}. {snack_display[item][0]} @ ₹{snack_display[item][1]}")
+                print(f"{item}. {snack_display[item]} @ ₹{snack_price}")
             snack_order = user_commands(snack_list)  # taking snacks order.
 
             if snack_order in snack_display:
-                print(f"You ordered {snack_order} @ ₹{snack_display[snack_order][1]}")
-                total_order_price += snack_display[snack_order][1]
+                print(f"You ordered {snack_order} @ ₹{snack_price}\n")
+                total_order_price += snack_price
+
+            print(f"Total price: ₹{total_order_price}\n")
+
+            total_money = 0  # holds money entered by user.
