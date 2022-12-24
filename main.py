@@ -4,6 +4,7 @@
 
 from display_creater import closed_drinks, drink_display, addon_display
 from resources import main_ingredients, snacks, snack_price, sweeteners, sweet_price
+from money import money_checker
 from command import user_commands
 from menu import MENU
 
@@ -37,7 +38,7 @@ else:
             pass
         elif order in avail_drinks:  # for drink that is available
             print(f"you ordered {order}. {avail_drinks[order][0]} @ ₹{avail_drinks[order][1]}\n")
-            customer_order[order] = avail_drinks[order][0]
+            customer_order[avail_drinks[order][0]] = avail_drinks[order][1]
             total_order_price += avail_drinks[order][1]  # adding price in total.
 
             # sweetener variables.
@@ -49,11 +50,11 @@ else:
 
             if sweetener_order in sweetener_display:  # checking sweetener in list.
                 print(f"You ordered {sweetener_order} @ ₹{sweet_price}\n")
-                # customer_order =
+                customer_order[sweetener_display[sweetener_order]] = sweet_price
                 total_order_price += sweet_price
 
             # snacks variables starts here.
-            snack_display = addon_display(snacks)
+            snack_display = addon_display(snacks)  # snacks dictionary
             snack_list = [num for num in snack_display]
             for item in snack_display:
                 print(f"{item}. {snack_display[item]} @ ₹{snack_price}")
@@ -61,8 +62,19 @@ else:
 
             if snack_order in snack_display:
                 print(f"You ordered {snack_order} @ ₹{snack_price}\n")
+                customer_order[snack_display[snack_order]] = snack_price
                 total_order_price += snack_price
 
-            print(f"Total price: ₹{total_order_price}\n")
+            print("\n")
+            for item in customer_order:
+                print(f"{item} for ₹{customer_order[item]}")
+            print("==========================")
+            print(f"Total price: ₹{total_order_price}")
 
-            total_money = 0  # holds money entered by user.
+            money_entered = money_checker(total_order_price)  # hold customer input
+            print(f"==================================")
+            if money_entered:
+                print(f"PAID: ₹{money_entered} - REQUIRED: ₹{total_order_price} = REFUND: ₹{money_entered - total_order_price}")
+            else:
+                print(f"PAID: ₹{money_entered}")
+                print("Insufficient Money.\nORDER CANCELLED.\n\n")
