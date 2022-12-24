@@ -27,3 +27,6 @@ snacks = {
         "cakes": 100
     }
 snack_price = 20
+
+# money: store all the money charged for drinks.
+money = 0
