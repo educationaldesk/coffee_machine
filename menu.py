@@ -9,7 +9,7 @@ MENU = {
             "coffee": 20,
             "milk": 20
         },
-        "cost": 50
+        "cost": 52
     },
     "cappuccino": {
         "ingredients": {
@@ -17,7 +17,7 @@ MENU = {
             "coffee": 20,
             "cream": 15,
         },
-        "cost": 140
+        "cost": 147
     },
     "espresso": {
         "ingredients": {
@@ -25,7 +25,7 @@ MENU = {
             "milk": 25,
             "coffee": 20
         },
-        "cost": 80
+        "cost": 84
     },
     "blackCoffee": {
         "ingredients": {
