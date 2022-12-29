@@ -29,4 +29,4 @@ snacks = {
 snack_price = 20
 
 # money: store all the money charged for drinks.
-money = 0
+machine_money = [0]
